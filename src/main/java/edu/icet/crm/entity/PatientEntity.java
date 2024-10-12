@@ -1,6 +1,6 @@
 package edu.icet.crm.entity;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,8 +9,11 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
+@Table(name = "patient")
 public class PatientEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private String nic;
