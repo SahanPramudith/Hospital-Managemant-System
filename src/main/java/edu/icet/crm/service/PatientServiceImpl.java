@@ -36,4 +36,13 @@ public class PatientServiceImpl implements PatientService{
     public void deletepatient(Integer id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public ArrayList<PatientEntity> search(String name) {
+        ArrayList<PatientEntity> namesearch = new ArrayList<>();
+        for (PatientEntity patientEntity : repository.findByname(name)) {
+            namesearch.add(patientEntity);
+        }
+        return namesearch;
+    }
 }
