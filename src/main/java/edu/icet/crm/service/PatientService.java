@@ -14,4 +14,6 @@ public interface PatientService {
     void deletepatient(Integer id);
 
     ArrayList<PatientEntity> search(String name);
+
+    List<Patient> searchByaddress(String address);
 }

@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface PatientRepository extends CrudRepository<PatientEntity,Integer> {
     List<PatientEntity> findByname(String name);
+
+    List<PatientEntity> findByaddress(String address);
 }

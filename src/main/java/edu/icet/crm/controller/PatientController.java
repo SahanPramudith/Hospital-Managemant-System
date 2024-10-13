@@ -45,5 +45,9 @@ public class PatientController {
     ArrayList<PatientEntity> search(@PathVariable String name){
         return service.search(name);
     }
+    @GetMapping("search-By-address/{address}")
+    List<Patient>searchByAddress(@PathVariable String address){
+        return service.searchByaddress(address);
+    }
 
 }

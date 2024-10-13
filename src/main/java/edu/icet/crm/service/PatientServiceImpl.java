@@ -45,4 +45,14 @@ public class PatientServiceImpl implements PatientService{
         }
         return namesearch;
     }
+
+    @Override
+    public List<Patient> searchByaddress(String address) {
+        ArrayList<Patient> findAddress = new ArrayList<>();
+        for (PatientEntity byaddress : repository.findByaddress(address)) {
+            findAddress.add(mapper.map(byaddress,Patient.class));
+        }
+        return findAddress;
+
+    }
 }
