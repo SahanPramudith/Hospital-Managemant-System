@@ -49,5 +49,9 @@ public class PatientController {
     List<Patient>searchByAddress(@PathVariable String address){
         return service.searchByaddress(address);
     }
+    @GetMapping("search-By-nic/{nic}")
+    List<Patient>searchByNic(@PathVariable String nic){
+        return service.searchByNic(nic);
+    }
 
 }

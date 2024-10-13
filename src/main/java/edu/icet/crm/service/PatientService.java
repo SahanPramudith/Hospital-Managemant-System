@@ -16,4 +16,6 @@ public interface PatientService {
     ArrayList<PatientEntity> search(String name);
 
     List<Patient> searchByaddress(String address);
+
+    List<Patient> searchByNic(String nic);
 }

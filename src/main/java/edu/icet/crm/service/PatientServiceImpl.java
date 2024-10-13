@@ -55,4 +55,14 @@ public class PatientServiceImpl implements PatientService{
         return findAddress;
 
     }
+
+    @Override
+    public List<Patient> searchByNic(String nic) {
+
+        ArrayList<Patient> findByNic = new ArrayList<>();
+        for (PatientEntity bynic : repository.findByNic(nic)) {
+            findByNic.add(mapper.map(bynic,Patient.class));
+        }
+            return findByNic;
+    }
 }
