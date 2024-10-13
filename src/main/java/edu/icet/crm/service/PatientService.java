@@ -8,4 +8,6 @@ public interface PatientService {
     List<Patient> getpatient();
 
     void addpatient(Patient patient);
+
+    void deletepatient(Integer id);
 }

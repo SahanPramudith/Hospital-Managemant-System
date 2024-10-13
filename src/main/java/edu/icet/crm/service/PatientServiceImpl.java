@@ -1,9 +1,9 @@
 package edu.icet.crm.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.icet.crm.entity.PatientEntity;
 import edu.icet.crm.model.Patient;
 import edu.icet.crm.repository.PatientRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,28 +11,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class PatientServiceImpl implements PatientService {
-
+public class PatientServiceImpl implements PatientService{
 
     @Autowired
     PatientRepository repository;
-
     @Autowired
-    ObjectMapper mapper;
+    ModelMapper mapper;
 
-    ArrayList<Patient> patientList = new ArrayList<>();
     @Override
     public List<Patient> getpatient() {
-
-        return patientList;
+        ArrayList<Patient> patientArrayList = new ArrayList<>();
+        for (PatientEntity patientEntity : repository.findAll()) {
+            patientArrayList.add(mapper.map(patientEntity, Patient.class));
+        }
+        return patientArrayList;
     }
 
     @Override
     public void addpatient(Patient patient) {
+        repository.save(mapper.map(patient, PatientEntity.class));
+    }
 
-        PatientEntity patientEntity = mapper.convertValue(patient, PatientEntity.class);
-
-        repository.save(patientEntity);
-
+    @Override
+    public void deletepatient(Integer id) {
+        repository.deleteById(id);
     }
 }

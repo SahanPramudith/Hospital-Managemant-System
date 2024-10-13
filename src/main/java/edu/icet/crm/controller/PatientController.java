@@ -22,8 +22,11 @@ public class PatientController {
 
     @GetMapping("patient-get")
     List<Patient> getPatient(){
-        List<Patient> getpatient = service.getpatient();
-        return getpatient;
+        return service.getpatient();
+    }
 
+    @DeleteMapping("delete/{id}")
+    void deletPatient(@PathVariable Integer id){
+        service.deletepatient(id);
     }
 }
