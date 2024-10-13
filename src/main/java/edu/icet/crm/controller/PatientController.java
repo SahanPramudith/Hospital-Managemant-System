@@ -29,4 +29,10 @@ public class PatientController {
     void deletPatient(@PathVariable Integer id){
         service.deletepatient(id);
     }
+    @PutMapping("/update")
+    void updatepatient(@RequestBody Patient patient){
+        service.addpatient(patient);
+        System.out.println(patient);
+    }
+
 }
