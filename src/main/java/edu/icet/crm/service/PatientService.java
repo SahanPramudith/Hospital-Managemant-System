@@ -6,7 +6,7 @@ import edu.icet.crm.model.Patient;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface PatientService {
+public interface    PatientService {
     List<Patient> getpatient();
 
     void addpatient(Patient patient);

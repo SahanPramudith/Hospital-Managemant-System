@@ -1,8 +1,9 @@
-package edu.icet.crm.service;
+package edu.icet.crm.service.Impl;
 
 import edu.icet.crm.entity.PatientEntity;
 import edu.icet.crm.model.Patient;
 import edu.icet.crm.repository.PatientRepository;
+import edu.icet.crm.service.PatientService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class PatientServiceImpl implements PatientService{
+public class PatientServiceImpl implements PatientService {
 
     @Autowired
     PatientRepository repository;

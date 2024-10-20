@@ -17,7 +17,7 @@ public class PatientController {
     @Autowired
     PatientService service;
 
-    @PostMapping("patient-save")
+    @PostMapping("/patient-save")
     @ResponseStatus(HttpStatus.CREATED)
     void savePatien(@RequestBody Patient patient){
         service.addpatient(patient);
@@ -53,5 +53,13 @@ public class PatientController {
     List<Patient>searchByNic(@PathVariable String nic){
         return service.searchByNic(nic);
     }
+    // bloodGrop
+//    @GetMapping("search-By-bloodGrop/{bloodGrop}")
+//    List<Patient>searchBybloodGrop(@PathVariable String bloodGrop){
+//
+//    }
+
+    // conctact--
+    //content-- karanna
 
 }
