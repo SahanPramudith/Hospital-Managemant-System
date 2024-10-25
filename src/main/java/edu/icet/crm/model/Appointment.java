@@ -5,20 +5,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class Appointment {
     private Integer id;
-    private String name;
-    private String nic;
-    private String address;
-    private String bloodGroup;
-    private String category;
-    private String gender;
-    private String contact;
-    private String note;
-    private String age;
-    private String allergies;
+    private String type;
+    private String qr;
+    private LocalDateTime dateTime;
+    private String description;
+    private String status;
+    private Integer roomNumber;
+    private Integer q_Number;
+    private Integer patientId;
+    private Integer adminId;
 }
