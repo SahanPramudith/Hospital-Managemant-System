@@ -22,5 +22,4 @@ public class Appointment {
     private Integer q_Number;
     private Integer patientId;
     private Integer adminId;
-
 }
